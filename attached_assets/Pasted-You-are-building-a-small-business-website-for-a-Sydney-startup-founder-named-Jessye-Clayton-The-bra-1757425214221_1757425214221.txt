@@ -1,0 +1,149 @@
+You are building a small business website for a Sydney startup founder named Jessye Clayton. The brand is “You Are The Compass”. The site should be clean, minimal, warm & approachable, and use green as the primary color.
+
+Tech + Project Setup
+
+Use Next.js 14 (App Router) + TypeScript + Tailwind CSS.
+
+No external UI kits. Keep dependencies light.
+
+Create a second Link-in-bio micro-page (Linktree-style) at /links.
+
+Content-driven: store page content in Markdown under /content/** and basic site settings in /site.config.ts.
+
+Include a simple /api/subscribe endpoint that accepts { email } and:
+
+If MAILCHIMP_API_KEY and MAILCHIMP_AUDIENCE_ID env vars exist, post to Mailchimp.
+
+Else, append to /data/subscribers.csv server-side (create the file if missing).
+
+Provide README.md with setup, env vars, and content editing instructions.
+
+Brand & Styling
+
+Primary: green #2E7D32
+
+Accents: light green #A5D6A7, dark charcoal #111827, off-white #F8FAFC
+
+Font pair: Inter for UI/body, Playfair Display for headings.
+
+Rounded corners, generous whitespace, subtle shadows; avoid heavy gradients.
+
+Provide a slot to upload the provided logo and auto-scale it (SVG/PNG).
+
+Pages & Routes
+
+/ (Home)
+
+Hero with logo, headline, short value prop, and CTAs:
+
+“Subscribe” (opens modal form)
+
+“Listen to the Podcast” (anchor to Episodes section)
+
+“What we do” grid: Podcasting, Self-Help & Education, Adventure Treks
+
+Featured Podcast Episode (card)
+
+Email capture section
+
+Testimonials (3 quotes w/ avatars)
+
+Footer with socials (Instagram, TikTok, YouTube, Spotify, Apple Podcasts) and contact email
+
+/about
+
+Founder intro (Jessye), mission, brand story
+
+Photo placeholder
+
+Values list
+
+/services
+
+Cards for:
+
+Podcasting (show production & distribution)
+
+Self-help & Education (courses, workshops)
+
+Adventure Treks (upcoming trips; CTA “Join the waitlist” -> subscribe)
+
+Simple FAQ accordion
+
+/episodes
+
+Static list from /content/episodes/*.md with front-matter:
+
+title, date, summary, audioUrl, platformLinks (spotify/apple)
+
+Episode page route /episodes/[slug] with audio player (HTML5) and platform badges.
+
+/blog (optional starter)
+
+Blog index from /content/blog/*.md and /blog/[slug]
+
+/contact
+
+Simple contact details and a form (name, email, message).
+
+Form posts to /api/contact and writes to /data/contact.csv. (No email sending needed.)
+
+/links (Linktree-style)
+
+Avatar/logo, short bio line
+
+Stack of large tappable link buttons (Instagram, TikTok, Podcast, Subscribe, Latest Episode)
+
+Auto-dark mode, perfect for mobile.
+
+Components
+
+SiteHeader (sticky, translucent on scroll)
+
+SiteFooter
+
+Hero
+
+Section wrapper with consistent spacing
+
+FeatureCard, EpisodeCard, TestimonialCard
+
+NewsletterForm (modal + inline)
+
+SocialIcons (SVG only)
+
+Button variants (primary/secondary/ghost)
+
+FAQAccordion
+
+Content & Sample Copy (placeholders)
+
+Value prop (Home hero):
+
+Headline: “Find your direction—one step, one story.”
+
+Sub: “Podcasting, personal growth, and real-world adventures to help you move forward.”
+
+Category blurbs:
+
+Podcasting: “Conversations and stories that spark action.”
+
+Self-Help & Education: “Workshops and resources for practical growth.”
+
+Adventure Treks: “Guided experiences to reconnect with nature—and yourself.”
+
+Footer tagline: “You are the compass.”
+
+Functionality
+
+Subscribe modal (any page): email field + consent checkbox.
+
+If Mailchimp env vars present, send via API; else append to CSV. Show success/failure toasts.
+
+Episodes page: search box + tag filter.
+
+SEO: Set title/description per page; add sitemap.xml, robots.txt, and Open Graph meta (with default social preview).
+
+Accessibility: Semantic HTML, labeled form inputs, focus states, color-contrast AA.
+
+Performance: Use next/image for all images. Lazy-load sections below the fold.
