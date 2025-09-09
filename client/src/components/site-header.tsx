@@ -3,7 +3,8 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import NewsletterForm from "@/components/newsletter-form";
-import { Menu, Compass } from "lucide-react";
+import { Menu } from "lucide-react";
+import logoImage from "@assets/image_1757426114065.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -34,9 +35,11 @@ export default function SiteHeader() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Compass className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <img 
+              src={logoImage} 
+              alt="You Are The Compass Logo" 
+              className="w-10 h-10 rounded-lg object-contain"
+            />
             <span className="font-serif font-semibold text-xl hidden sm:block">
               You Are The Compass
             </span>
@@ -75,9 +78,11 @@ export default function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <div className="flex items-center space-x-3 mb-8">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <Compass className="h-6 w-6 text-primary-foreground" />
-                </div>
+                <img 
+                  src={logoImage} 
+                  alt="You Are The Compass Logo" 
+                  className="w-10 h-10 rounded-lg object-contain"
+                />
                 <span className="font-serif font-semibold text-lg">
                   You Are The Compass
                 </span>

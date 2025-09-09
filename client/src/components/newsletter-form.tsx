@@ -10,7 +10,7 @@ import { insertSubscriberSchema, type InsertSubscriber } from "@shared/schema";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { Compass } from "lucide-react";
+import logoImage from "@assets/image_1757426114065.png";
 
 interface NewsletterFormProps {
   buttonText?: string;
@@ -103,9 +103,11 @@ export default function NewsletterForm({
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <div className="flex items-center justify-center mb-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                <Compass className="h-8 w-8 text-primary" />
-              </div>
+              <img 
+                src={logoImage} 
+                alt="You Are The Compass Logo" 
+                className="w-16 h-16 rounded-xl object-contain"
+              />
             </div>
             <DialogTitle className="text-center font-serif text-2xl">Stay on Course</DialogTitle>
             <p className="text-center text-muted-foreground">
@@ -167,9 +169,11 @@ export default function NewsletterForm({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-              <Compass className="h-8 w-8 text-primary" />
-            </div>
+            <img 
+              src={logoImage} 
+              alt="You Are The Compass Logo" 
+              className="w-16 h-16 rounded-xl object-contain"
+            />
           </div>
           <DialogTitle className="text-center font-serif text-2xl">Stay on Course</DialogTitle>
           <p className="text-center text-muted-foreground">

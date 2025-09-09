@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import SocialIcons from "@/components/social-icons";
 import NewsletterForm from "@/components/newsletter-form";
-import { Compass } from "lucide-react";
+import logoImage from "@assets/image_1757426114065.png";
 
 const navigation = {
   navigate: [
@@ -33,9 +33,11 @@ export default function SiteFooter() {
           {/* Logo and tagline */}
           <div className="text-center mb-12">
             <Link href="/" className="inline-flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <Compass className="h-6 w-6 text-primary-foreground" />
-              </div>
+              <img 
+                src={logoImage} 
+                alt="You Are The Compass Logo" 
+                className="w-10 h-10 rounded-lg object-contain"
+              />
               <span className="font-serif font-semibold text-xl">You Are The Compass</span>
             </Link>
             <p className="text-muted-foreground italic">You are the compass.</p>

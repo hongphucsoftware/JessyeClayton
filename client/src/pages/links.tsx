@@ -2,7 +2,8 @@ import SocialIcons from "@/components/social-icons";
 import NewsletterForm from "@/components/newsletter-form";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Compass, Headphones, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { Headphones, Instagram, MessageCircle, Youtube } from "lucide-react";
+import logoImage from "@assets/image_1757426114065.png";
 import { useEffect } from "react";
 
 const links = [
@@ -38,7 +39,7 @@ const links = [
     title: "Subscribe to Newsletter",
     description: "Weekly insights & updates",
     action: "subscribe",
-    icon: <Compass className="h-6 w-6" />,
+    icon: <img src={logoImage} alt="Logo" className="h-6 w-6 rounded object-contain" />,
     color: "bg-secondary"
   }
 ];
@@ -57,9 +58,11 @@ export default function Links() {
       <div className="max-w-md mx-auto py-8">
         {/* Avatar and Bio */}
         <div className="text-center mb-8">
-          <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-            <Compass className="h-12 w-12 text-primary-foreground" />
-          </div>
+          <img 
+            src={logoImage} 
+            alt="You Are The Compass Logo" 
+            className="w-24 h-24 rounded-full mx-auto mb-6 object-contain bg-white"
+          />
           <h1 className="font-serif text-2xl font-bold text-foreground mb-2">
             You Are The Compass
           </h1>

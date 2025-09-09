@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import NewsletterForm from "@/components/newsletter-form";
-import { Compass } from "lucide-react";
+import logoImage from "@assets/image_1757426114065.png";
 
 export default function Hero() {
   const scrollToEpisodes = () => {
@@ -14,12 +14,13 @@ export default function Hero() {
     <section className="hero-gradient py-20 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logo placeholder */}
+          {/* Logo */}
           <div className="mb-8">
-            <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Compass className="h-12 w-12 text-primary" />
-              {/* @IMPLEMENTATION: Replace with uploaded logo */}
-            </div>
+            <img 
+              src={logoImage} 
+              alt="You Are The Compass Logo" 
+              className="w-24 h-24 rounded-2xl mx-auto mb-6 object-contain"
+            />
           </div>
           
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
